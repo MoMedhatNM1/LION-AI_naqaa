@@ -3,8 +3,9 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 import clsx from 'clsx';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegisterReturn<string>;
+  register?: UseFormRegisterReturn<string>;
   className?: string;
+  label?: string;
   errorMsg?: string;
   icon?: string;
 }
@@ -12,23 +13,32 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = ({
   register,
   className,
+  label,
   errorMsg,
   icon,
   ...props
 }: InputProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col gap-1">
+      {label && (
+        <label className="mr-1 text-xs font-bold text-ink-soft">{label}</label>
+      )}
       <div className="relative flex items-center">
         {Boolean(icon) && (
-          <i className={clsx('absolute left-4 text-xl', icon)} />
+          <i
+            className={clsx(
+              'pointer-events-none absolute right-4 text-xl text-ink-faint',
+              icon
+            )}
+          />
         )}
         <input
           className={clsx(
-            'w-full rounded-full bg-white px-4 py-2 outline-none ring-1 transition-shadow autofill:shadow-[inset_0_0_0_1000px_#fff]',
+            'w-full rounded-2xl bg-white/70 px-4 py-2.5 text-ink outline-none ring-1 backdrop-blur transition-shadow placeholder:text-ink-faint autofill:shadow-[inset_0_0_0_1000px_#fff]',
             {
-              'pl-[42px]': Boolean(icon),
-              'ring-red-500': Boolean(errorMsg),
-              'ring-transparent focus:ring-blue-500': !Boolean(errorMsg),
+              'pr-[46px]': Boolean(icon),
+              'ring-error/70': Boolean(errorMsg),
+              'ring-silver-300/70 focus:ring-gold-400': !errorMsg,
             },
             className
           )}
@@ -37,7 +47,7 @@ export const Input = ({
         />
       </div>
       {Boolean(errorMsg) && (
-        <span className="ml-2 mt-0.5 text-xs text-red-500">{errorMsg}</span>
+        <span className="mr-1 text-xs text-error">{errorMsg}</span>
       )}
     </div>
   );

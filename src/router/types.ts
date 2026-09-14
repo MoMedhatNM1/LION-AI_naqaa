@@ -5,6 +5,8 @@ export interface RouteTitle {
 export interface RouteMenu {
   icon: JSX.Element;
   text: string;
+  /** Sidebar section grouping label (optional) */
+  group?: string;
 }
 
 export interface RouteType {

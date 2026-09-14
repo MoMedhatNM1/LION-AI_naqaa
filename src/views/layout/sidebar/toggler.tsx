@@ -5,14 +5,11 @@ export const SidebarToggler = () => {
 
   return (
     <button
-      className="absolute -left-4 top-1/2 hidden h-8 w-8 -translate-y-1/2 rounded-full bg-inherit text-xl shadow-[0_0_16px_-8px] shadow-black/25 outline-none backdrop-blur transition hover:bg-white/50 hover:text-active sm:inline-flex sm:items-center sm:justify-center"
+      className="absolute -left-3 top-8 z-20 hidden h-7 w-7 items-center justify-center rounded-full glass text-ink-soft shadow-glass outline-none transition hover:text-gold-600 sm:inline-flex"
       onClick={toggleSidebar}
+      aria-label="طي القائمة الجانبية"
     >
-      {isSidebarOpen ? (
-        <i className="icon-left-circle"></i>
-      ) : (
-        <i className="icon-right-circle"></i>
-      )}
+      <i className={isSidebarOpen ? 'icon-right' : 'icon-left'} />
     </button>
   );
 };
