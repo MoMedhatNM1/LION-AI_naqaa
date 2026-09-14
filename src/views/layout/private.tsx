@@ -1,20 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import { Main, Glass, Sphere, Sidebar, SidebarToggler, Header } from '.';
+import { Main, Sidebar, Header } from '.';
 
 export const PrivateLayout = () => (
   <Main>
-    <Glass className="h-full w-full flex-col-reverse sm:flex-row">
-      <Sphere variant="primary" className="-right-10 top-8" />
+    <div className="mx-auto flex h-full w-full max-w-[1640px] gap-3 p-3 sm:gap-4 sm:p-4">
       <Sidebar />
-      <div
-        className="relative flex h-full w-full flex-col gap-4 rounded-primary bg-white/30 p-4"
-        role="content-wrapper"
-      >
-        <SidebarToggler />
+      <div className="flex h-full min-w-0 flex-1 flex-col gap-3 sm:gap-4">
         <Header />
-        <Outlet />
+        <div className="min-h-0 flex-1">
+          <Outlet />
+        </div>
       </div>
-      <Sphere variant="secondary" className="-bottom-10 left-8" />
-    </Glass>
+    </div>
   </Main>
 );

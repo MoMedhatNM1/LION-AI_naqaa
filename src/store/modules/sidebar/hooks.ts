@@ -8,10 +8,16 @@ export const useSidebarStore = create<SidebarStore>()(
       isSidebarOpen: true,
       toggleSidebar: () =>
         set(state => ({ isSidebarOpen: !state.isSidebarOpen })),
+      isMobileOpen: false,
+      openMobile: () => set(() => ({ isMobileOpen: true })),
+      closeMobile: () => set(() => ({ isMobileOpen: false })),
     }),
     {
       name: 'sidebar',
       storage: createJSONStorage(() => localStorage),
+      partialize: state => ({
+        isSidebarOpen: state.isSidebarOpen,
+      }),
     }
   )
 );

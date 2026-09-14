@@ -1,0 +1,24 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="NAQAA CLEAN">
+  <defs>
+    <linearGradient id="naqaaGold" x1="30" y1="12" x2="92" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e7d29e"/>
+      <stop offset="0.5" stop-color="#cfa94e"/>
+      <stop offset="1" stop-color="#a67c2b"/>
+    </linearGradient>
+  </defs>
+  <!-- Purity droplet + leaf emblem -->
+  <path d="M60 14
+    C60 14 90 44 90 70
+    A30 30 0 1 1 30 70
+    C30 44 60 14 60 14 Z"
+    fill="url(#naqaaGold)" fill-opacity="0.16"
+    stroke="url(#naqaaGold)" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- Leaf swirl inside -->
+  <path d="M46 82
+    C46 62 58 50 78 48
+    C74 68 64 82 46 82 Z"
+    fill="url(#naqaaGold)" fill-opacity="0.5"/>
+  <path d="M46 82 C56 74 66 66 78 48" stroke="#fffdf7" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- Shine -->
+  <path d="M50 40 C46 48 44 56 44 62" stroke="#fffdf7" stroke-width="3" stroke-linecap="round" stroke-opacity="0.85"/>
+</svg>

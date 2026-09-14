@@ -2,26 +2,56 @@
 
 /* custom reset */
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Tajawal', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #2a2e37;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin luxury scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(193, 149, 54, 0.4) transparent;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(193, 149, 54, 0.4);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(193, 149, 54, 0.65);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 @layer base {
   h1 {
-    @apply text-2xl font-bold;
+    @apply font-display text-2xl font-extrabold text-ink;
   }
   h2 {
-    @apply text-xl font-bold;
+    @apply font-display text-xl font-bold text-ink;
   }
   h3 {
-    @apply text-lg font-bold;
+    @apply font-display text-lg font-bold text-ink;
   }
   h4 {
-    @apply text-base font-bold;
+    @apply font-display text-base font-bold text-ink;
   }
   h5 {
-    @apply text-sm font-bold;
+    @apply font-display text-sm font-bold text-ink;
   }
   h6 {
-    @apply text-xs font-bold;
+    @apply font-display text-xs font-bold text-ink;
+  }
+  ::selection {
+    @apply bg-gold-200/60 text-ink;
   }
 }
